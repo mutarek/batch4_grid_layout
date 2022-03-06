@@ -1,0 +1,128 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+.main_container{
+    width: 80%;
+    height:auto;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.form_heading{
+    text-align: center;
+    margin-bottom: 30px;
+}
+span{
+    color:rgb(63, 53, 202);
+}
+label{
+    font-size: 20px;
+    font-weight: 800;
+}
+.form_with_heading{
+    background: #fff;
+    box-shadow: 2px 3px 20px 1px black;
+    padding-bottom: 20px;
+}
+.main_form{
+    background: #fff;
+    width: 90%;
+    margin: 20px auto;
+}
+.form_with_heading p{
+    background: rgb(231, 231, 231);
+    margin-bottom: 30px;
+    padding: 5px 0 5px 5%;
+    color: #fff;
+    font-size: 20px;
+    background:rgb(63, 53, 202);
+}
+.main_form form{
+    background: #fff;
+    margin-top: 100px 50px;
+    display: flex;
+    justify-content: space-between;
+}
+.left_side{
+    padding: 1px;
+    flex-basis: 48%;
+    
+}
+.left_side select{
+    width: 100%;
+    margin: 10px 1px 10px 1px;
+    padding: 11px 4px;
+    outline: none;
+    color: rgb(53, 53, 53);
+    font-size: 20px;
+    cursor: pointer;
+}
+.left_side input{
+    width: 100%;
+    margin: 5px 1px 20px 1px;
+    padding: 11px 4px;
+    outline: none;
+    color: rgb(53, 53, 53);
+    font-size: 20px;
+    cursor: pointer;
+}
+.right_side{
+    flex-basis: 48%;
+}
+.right_side select{
+    width: 100%;
+    margin: 10px 1px 10px 0;
+    padding: 11px 5px;
+    outline: none;
+    color: rgb(73, 73, 73);
+    font-size: 20px;
+    cursor: pointer;
+}
+.right_side input{
+    width: 100%;
+    margin: 30px 0 0 0;
+    padding: 14px 5px;
+    outline: none;
+    border: hidden;
+    border-radius: 5px;
+    background: rgb(63, 53, 202);
+    color: #fff;
+    font-weight: 900;
+    cursor: pointer;
+    transition: 0.5s;
+}
+.right_side input:hover{
+    background: #85b3d1;
+    color: rgb(63, 53, 202);
+}
+
+@media screen and (max-width: 640px){
+.main_form form{
+    margin-top: 100px 50px;
+    display: flex;
+    flex-direction: column;
+}
+.form_heading{
+    font-size: 9px;  
+}
+.form_with_heading p{
+    font-size: 15px;
+}
+.right_side select{
+    font-size: 15px;
+    border: 1px solid black;
+}
+.left_side select{
+    font-size: 15px;
+    border: 1px solid black;
+}
+.left_side input{
+    font-size: 15px;
+    border: 1px solid black;
+}
+
+}
