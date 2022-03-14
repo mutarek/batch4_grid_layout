@@ -4,6 +4,14 @@
 	<title></title>
 	<link rel="stylesheet" type="text/css" href="tarek.css">
 	<script src="data.js"></script>
+	<style>
+		.blog{
+			height: auto;
+			width: 300px;
+			border: 2px solid red;
+			box-shadow: 2px 4px 10px 0px gray;
+		}
+	</style>
 </head>
 <body>
 
@@ -23,21 +31,45 @@
 	<br>
 
 	<div class="main-content">
-		
+		<h1 id="title">Test Tile</h1>
 	<script>
-		var a = 0;
-		length = blogs.length;
-		while (a <length) {
-			document.write(`<div class="res">
-				<p>${blogs[a]['title']['rendered']}</p>
-				<img src="${blogs[a]['_embedded']['wp:featuredmedia'][0]['source_url']}">
-				<p>${blogs[a]['title']['rendered']}</p>
-			</div>`);
-			a++;
-		}
+		var mydata = getdata();
+		async function getdata(){
+			const response = await fetch('https://dhakacity.com.bd/wp-json/wp/v2/posts');
+        	var data = await response.json();
+			showUi(data);
+			}
+
+			function showUi(data){
+				for (let i = 0; i < data.length; i++) {
+					var title = data[i]['title']['rendered'];
+					var image = data[i]['jetpack_featured_media_url'];
+					console.log(title);
+				}
+			}
+			var a = 0;
+                      var size = data.length;
+                      while(a < 10){
+                        document.write(`<div class="each-product">
+                        <h1>${data[a]['title']['rendered']}</h1>
+                        <img src="${data[a]['_embedded']['wp:featuredmedia'][0]['source_url']}" alt="">
+                        <div class="price-cart">
+                            <div class="price">
+                                <h1>2000 Tk</h1>
+                            </div>
+                            <div>
+                                <button class="cart">Cart</button>
+                            </div>
+                        </div>
+                    </div>`);
+                        a++;
+                      }
 	</script>	
 	
-
+	<!-- <div class="blog">
+		<p>${title}</p>
+	<img src="${image}" width="200px" height="200px">
+	</div> -->
 	</div>
 
 	<h1 style="text-align: center;">Our Teams</h1>
